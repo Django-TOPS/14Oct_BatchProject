@@ -26,7 +26,7 @@ SECRET_KEY = '0&agu-dj(pd!px8d!k4o666b^8a6n7i(&y1oqdh+j-$7m0enyn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1','sanketapps.herokuapp.com']
 
 
 # Application definition
