@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '0&agu-dj(pd!px8d!k4o666b^8a6n7i(&y1oqdh+j-$7m0enyn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1','sanketapps.herokuapp.com']
 
@@ -94,12 +94,12 @@ WSGI_APPLICATION = 'site1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': '14oct_sitedb',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd1iufkc4rpt332',
+        'USER': 'maopvqvtesnbjl',
+        'PASSWORD': '12aa370e3b831481421b72bdb6fc6ba2f4b65237a2e84b4d48d88146f2abe2f5',
+        'HOST': 'ec2-54-211-77-238.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
