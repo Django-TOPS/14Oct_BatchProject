@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-import django_heroku
+
 import os
 from pathlib import Path
 
@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '0&agu-dj(pd!px8d!k4o666b^8a6n7i(&y1oqdh+j-$7m0enyn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -136,37 +136,18 @@ USE_L10N = True
 
 USE_TZ = True
 
-'''
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
-#Static DIR
+STATIC_URL = '/static/'
+#STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
+    BASE_DIR / "static",
 ]
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-'''
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.11/howto/static-files/
-PROJECT_ROOT   =   os.path.join(os.path.abspath(__file__))
-STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'staticfiles')
-STATIC_URL = '/static/'
-
-# Extra lookup directories for collectstatic to find static files
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
-)
-
 #  Add configuration for static files storage using whitenoise
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
-
-
-
+#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 # Mail Configuration
 
@@ -179,5 +160,3 @@ EMAIL_HOST_PASSWORD = 'Django@2021'
 
 
 LOGIN_REDIRECT_URL='/profile'
-
-django_heroku.settings(locals())
